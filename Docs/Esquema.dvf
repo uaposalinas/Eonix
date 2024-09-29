@@ -1,0 +1,21 @@
+/Eonix
+│
+├── /assets               # Recursos estáticos (CSS, JS, imágenes, etc.)
+│   ├── /css              # Archivos CSS
+│   ├── /js               # Archivos JavaScript
+│   └── /images           # Imágenes y otros recursos multimedia
+│
+├── /includes             # Archivos PHP reutilizables (ej. header, footer)
+│
+├── /config               # Configuraciones del proyecto (Base de datos, constantes)
+│
+├── /public               # Carpeta pública (index.php u otros archivos accesibles desde la web)
+│   ├── index.php         # Archivo principal PHP
+│
+├── /vendor               # Librerías externas (si usas Composer o algún otro gestor)
+│
+├── /logs                 # Archivos de logs
+│
+├── /views                # Plantillas HTML o vistas PHP
+│
+└── /controllers          # Controladores PHP para manejar la lógica de la aplicación
