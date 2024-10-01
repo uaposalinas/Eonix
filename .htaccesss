@@ -1,5 +1,4 @@
 RewriteEngine On
 
-# Reescribe todo el tráfico a la carpeta public
 RewriteCond %{REQUEST_URI} !^/Public/
 RewriteRule ^(.*)$ Public/$1 [L]
