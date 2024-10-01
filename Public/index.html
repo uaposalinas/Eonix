@@ -14,14 +14,24 @@
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	
+	<script>
+
+		const Styles = document.createElement('link');
+		Styles.rel = "stylesheet";
+		Styles.href = "css/main.css?v="+Math.random();
+		Styles.type = "text/css";
+		document.head.appendChild(Styles)
+
+	</script>
+
 </head>
 <body>
 	
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="post" action="Sale/index.html">
 					<span class="login100-form-title p-b-26">
 						Iniciar Sesión
 					</span>
@@ -30,7 +40,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Escribe un @">
-						<input class="input100" type="text" name="email">
+						<input class="input100" type="text" name="emails">
 						<span class="focus-input100" data-placeholder="Nombre de usuario:"></span>
 					</div>
 
@@ -84,6 +94,16 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+
+
+	<script>
+
+		const Script = document.createElement('script');
+		Script.href = "js/main.js?v="+Math.random();
+		Script.type = "text/javascript";
+		document.body.appendChild(Script)
+
+	</script>
 
 </body>
 </html>
