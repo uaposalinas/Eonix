@@ -31,7 +31,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" method="post" action="Sale/index.html">
+				<form class="login100-form validate-form FormControl" method="post" action="Sale/index.html">
 					<span class="login100-form-title p-b-26">
 						Iniciar Sesión
 					</span>
@@ -40,7 +40,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Escribe un @">
-						<input class="input100" type="text" name="emails">
+						<input class="input100 CapturedUserName" type="text" name="CapturedUserName">
 						<span class="focus-input100" data-placeholder="Nombre de usuario:"></span>
 					</div>
 
@@ -48,7 +48,7 @@
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="input100" type="password" name="pass">
+						<input class="input100 CapturedPassword" type="password" name="CapturedPassword">
 						<span class="focus-input100" data-placeholder="Escribe tu contraseña"></span>
 					</div>
 
@@ -78,21 +78,14 @@
 
 	<div id="dropDownSelect1"></div>
 	
-<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
 	<script src="vendor/daterangepicker/moment.min.js"></script>
 	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
 	<script src="js/main.js"></script>
 
 
@@ -104,6 +97,55 @@
 		document.body.appendChild(Script)
 
 	</script>
+
+<script>
+
+	const FormControl = document.querySelector('.FormControl');
+
+	FormControl.addEventListener('submit', CaptureData);
+
+	function CaptureData(e){
+
+		const CapturedUserName = document.querySelector('.CapturedUserName').value;
+		const CapturedPassword = document.querySelector('.CapturedPassword').value;
+
+		e.preventDefault();
+
+		fetch('../Controllers/com.login.controller.php', {
+
+			method: 'POST',
+			headers: {
+
+				'Content-Type': "Application/x-www-form-urlencoded",
+
+			},
+			body: `CapturedUserName=${encodeURIComponent(CapturedUserName)}&CapturedPassword=${encodeURIComponent(CapturedPassword)}`,
+
+		})
+		.then(response => response.text())
+		.then(Data => {
+
+			if(Data == "success"){
+
+				alert('ok');
+
+			}else{
+
+				alert("!ok")
+
+			}
+
+		})
+		.catch(error => {
+
+			console.warn("Ocurrió un error al procesar la solicitud. ErrDescripter: "+error);
+
+		})
+
+
+	}
+
+</script>
 
 </body>
 </html>
