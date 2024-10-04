@@ -1,4 +1,0 @@
-RewriteEngine On
-
-RewriteCond %{REQUEST_URI} !^/Public/
-RewriteRule ^(.*)$ Public/$1 [L]

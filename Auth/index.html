@@ -40,7 +40,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Escribe un @">
-						<input class="input100 CapturedUserName" type="text" name="CapturedUserName">
+						<input class="input100 CapturedUserName" type="text" name="CapturedUserName" autocomplete="off">
 						<span class="focus-input100" data-placeholder="Nombre de usuario:"></span>
 					</div>
 
@@ -98,54 +98,51 @@
 
 	</script>
 
-<script>
+	<script>
 
-	const FormControl = document.querySelector('.FormControl');
+		const FormControl = document.querySelector('.FormControl');
 
-	FormControl.addEventListener('submit', CaptureData);
+		FormControl.addEventListener("submit", Capture);
 
-	function CaptureData(e){
+		function Capture(e){
 
-		const CapturedUserName = document.querySelector('.CapturedUserName').value;
-		const CapturedPassword = document.querySelector('.CapturedPassword').value;
+			const CapturedUserName = document.querySelector('.CapturedUserName').value;
+			const CapturedPassword = document.querySelector('.CapturedPassword').value;
 
-		e.preventDefault();
+			e.preventDefault();
 
-		fetch('../Controllers/com.login.controller.php', {
+			fetch('../Controllers/com.login.controller.php', {
 
-			method: 'POST',
-			headers: {
+				method: "POST",
+				headers: {
 
-				'Content-Type': "Application/x-www-form-urlencoded",
+					"Content-Type": "Application/x-www-form-urlencoded",
 
-			},
-			body: `CapturedUserName=${encodeURIComponent(CapturedUserName)}&CapturedPassword=${encodeURIComponent(CapturedPassword)}`,
+				},
+				body: `CapturedUserName=${encodeURIComponent(CapturedUserName)}&CapturedPassword=${encodeURIComponent(CapturedPassword)}`,
 
-		})
-		.then(response => response.text())
-		.then(Data => {
+			})
+			.then(response => response.json())
+			.then(Results => {
 
-			if(Data == "success"){
+				console.log(Results);
 
-				alert('ok');
+				alert(`La tienda se llama ${Results.StoreInfo.StoreName} y queda ubicada en ${Results.StoreInfo.StoreAddress}`);
 
-			}else{
+				window.open(Results.UserInfo.ProfilePhoto, "ProfilePhoto", "width=800px, height=800px");
+				window.open(Results.StoreInfo.StoreLogo, "StoreLogo", "width=800px, height=800px");
 
-				alert("!ok")
+			})
+			.catch(error => {
 
-			}
+				console.warn("Ocurrió un error al procesar la solicitud. ErrDescripter: "+error)
 
-		})
-		.catch(error => {
-
-			console.warn("Ocurrió un error al procesar la solicitud. ErrDescripter: "+error);
-
-		})
+			})
 
 
-	}
+		}
 
-</script>
+	</script>
 
 </body>
 </html>
