@@ -7,4 +7,7 @@
 
     $Connection = new mysqli($ServerName, $UserName, $Password, $DatabaseName);
 
+    $Connection -> set_charset("utf8");
+
+
 ?>

@@ -18,7 +18,6 @@
 
 
         require '../Config/com.config.php';
-        $Connection -> set_charset("utf8");
         
         $UserQuery = "SELECT * FROM Users WHERE UserName = '$CapturedUserName'";
         $DoUserQuery = $Connection -> query($UserQuery);
