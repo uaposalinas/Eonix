@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<title>Iniciar Sesión • Eonix</title>
 	<meta charset="UTF-8">
@@ -72,9 +72,28 @@
 					</div>
 				</form>
 
-				<div class="LoginInfo">
+				<div class="AccountSummaryToLog">
 
-					
+					<div class="Information">
+
+						<div class="AccountInformation">
+
+							<div class="ProfilePhoto"></div>
+							<div class="AccountName">Alejandro Salinas</div>
+							<div class="UserName">uapo_salinas</div>
+
+						</div>
+						<div class="StoreInformation">
+							
+							<div class="StoreLogo"></div>
+							<div class="StoreName">Dexly Store</div>
+							<div class="StoreID">0501-2024031024-01</div>
+
+						</div>
+
+					</div>
+
+					<div class="ContainerButton">Continuar</div>
 
 				</div>
 
@@ -94,62 +113,21 @@
 	<script src="vendor/daterangepicker/daterangepicker.js"></script>
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<script src="js/main.js"></script>
+	<script src=" "></script>
 
 
 	<script>
 
 		const Script = document.createElement('script');
-		Script.href = "js/main.js?v="+Math.random();
+		Script.src = "../Assets/com.config.js/com.login.config.js?v="+Math.random();
 		Script.type = "text/javascript";
 		document.body.appendChild(Script)
 
-	</script>
-
-	<script>
-
-		const FormControl = document.querySelector('.FormControl');
-
-		FormControl.addEventListener("submit", Capture);
-
-		function Capture(e){
-
-			const CapturedUserName = document.querySelector('.CapturedUserName').value;
-			const CapturedPassword = document.querySelector('.CapturedPassword').value;
-
-			e.preventDefault();
-
-			fetch('../Controllers/com.login.controller.php', {
-
-				method: "POST",
-				headers: {
-
-					"Content-Type": "Application/x-www-form-urlencoded",
-
-				},
-				body: `CapturedUserName=${encodeURIComponent(CapturedUserName)}&CapturedPassword=${encodeURIComponent(CapturedPassword)}`,
-
-			})
-			.then(response => response.json())
-			.then(Results => {
-
-				console.log(Results);
-
-				alert(`La tienda se llama ${Results.StoreInfo.StoreName} y queda ubicada en ${Results.StoreInfo.StoreAddress}`);
-
-				window.open(Results.UserInfo.ProfilePhoto, "ProfilePhoto", "width=800px, height=800px");
-				window.open(Results.StoreInfo.StoreLogo, "StoreLogo", "width=800px, height=800px");
-
-			})
-			.catch(error => {
-
-				console.warn("Ocurrió un error al procesar la solicitud. ErrDescripter: "+error)
-
-			})
-
-
-		}
+		console.log(Script)
 
 	</script>
+
+
 
 </body>
 </html>
