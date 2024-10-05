@@ -6,7 +6,7 @@
 
     }else{
 
-        header("Location: ../Auth");
+        header("Location: ../Store");
 
     }
 
@@ -54,7 +54,7 @@
 
                     $Return = [
 
-                        "Access" => "true",
+                        "access" => "true",
                         
                         "UserInfo" => [
         
@@ -84,21 +84,21 @@
 
                 }else{
 
-                    $Return = ["Access" => "false", "ErrorCode" => "4042"];
+                    $Return = ["access" => "false", "ErrorCode" => "4042"];
 
                 }
 
 
             }else{
 
-                $Return = ["Access" => "false", "ErrorCode" => "4031"];
+                $Return = ["access" => "false", "ErrorCode" => "4031"];
 
 
             }
 
         }else{
 
-            $Return = ["Access" => "false", "ErrorCode" => "4041"];
+            $Return = ["access" => "false", "ErrorCode" => "4041"];
 
         }
 

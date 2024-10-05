@@ -502,7 +502,7 @@ iframe {
 
 
 .PageOne {
-  display: none !important;
+  display: block !important;
   height: 550px;
   position: absolute;
   width: 280px;
@@ -517,7 +517,7 @@ iframe {
   top:0px;
   background-position:center;
   background-size:cover;
-  display:flex;
+  display:none;
   justify-content:center;
   align-items:center;
   text-align:center;
@@ -574,7 +574,7 @@ iframe {
 
   width:130px;
   height:130px;
-  background-image:url(https://media.canva.com/v2/image-resize/format:PNG/height:550/quality:100/uri:s3%3A%2F%2Fmedia-private.canva.com%2FMv2EA%2FMAGRKdMv2EA%2F1%2Fp.png/watermark:F/width:550?csig=AAAAAAAAAAAAAAAAAAAAAG3jj9ZO7HgADJI5XJ_yzjEGGcAXChHPE-sBN9MyU8mA&exp=1728126269&osig=AAAAAAAAAAAAAAAAAAAAAAfsjUcceecM9VNEuy-tpim3obtXZvF5_OZZ-8qT_GSc&signer=media-rpc&x-canva-quality=thumbnail_large);
+  background-image:url(../../Assets/com.resources/com.icons/defaultuser.png);
   background-position:center;
   background-size:cover;
   border-radius:50%;
@@ -614,7 +614,7 @@ iframe {
 
   width:130px;
   height:130px;
-  background-image:url(https://static.devlabsco.space/Private/Content/Eonix/StoreLogo/com.logo.six.png);
+  background-image:url(../../Assets/com.resources/com.icons/defaultuser.png);
   background-position:center;
   background-size:cover;
   border-radius:20px;
@@ -633,5 +633,24 @@ iframe {
 
   font-size:14px;
   color:#9b9b9b;
+
+}
+
+
+.HidePage{
+
+  display: none !important;
+
+}
+
+.ShowPageD{
+
+  display:flex;
+
+}
+
+.ShowPageB{
+
+  display:block;
 
 }
