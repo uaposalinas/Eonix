@@ -162,6 +162,12 @@ iframe {
   margin: 0 auto;
 }
 
+.HideLogin{
+
+  animation: fadeOutDown 0.5s;
+
+}
+
 .container-login100 {
   width: 100%;  
   min-height: 100vh;
@@ -522,6 +528,7 @@ iframe {
   align-items:center;
   text-align:center;
   flex-direction:column;
+  animation: fadeInRight 0.5s;
 
 }
 
@@ -562,7 +569,7 @@ iframe {
   height:100%;
   position: absolute;
   top:0px;
-  display:none;
+  display:flex;
   justify-content:center;
   align-items:center;
   text-align:center;
@@ -602,11 +609,12 @@ iframe {
   height:100%;
   position: absolute;
   top:0px;
-  display:flex;
+  display:none;
   justify-content:center;
   align-items:center;
   text-align:center;
   flex-direction:column;
+  animation: fadeInRight 0.5s;
 
 }
 
@@ -652,5 +660,131 @@ iframe {
 .ShowPageB{
 
   display:block;
+
+}
+
+.InitServiceScreen{
+
+  width:100%;
+  height:100%;
+  position: absolute;
+  top:0px;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  flex-direction:column;
+  animation:fadeInUp 0.5s;
+
+
+}
+
+.InitServiceScreen .EonixLogo{
+
+  width:100px;
+  height:100px;
+  background-image:url(../images/icons/com.logo.six.png);
+  background-size:cover;
+  background-position:center;
+
+}
+
+.InitServiceScreen p{
+
+  color:#FFFFFF;
+  font-size:17px;;
+
+}
+
+.BounceIt{
+
+  animation:fadeInUp 0.5s;
+
+}
+
+.LoginNotificationsRender{
+
+  width:600px;
+  height:80px;
+  position: absolute;
+  bottom:0px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+}
+
+.LoginNotificationsRender .NotificationBody{
+
+  width:auto;
+  height:40px;
+  padding-top:10px;
+  padding-bottom:10px;
+  padding-left:20px;
+  padding-right:20px;
+  background-color:#424242;
+  border-radius:20px;
+  color:#FFFFFF;
+  position:absolute;
+  left:20px;
+  animation: fadeInUp 0.5s;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+}
+
+
+.LoginNotificationsRender .NotificationBody .CloseParent{
+
+  width:40px;
+  height:40px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+}
+
+
+.CloseButton{
+
+  width:25px;
+  height:25px;
+  transition:all 300ms;
+  border-radius:50%;
+
+}
+
+.CloseButton i{
+
+  width:25px;
+  height:25px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+
+}
+
+.CloseButton:hover{
+
+  background-color: #9b9b9b;
+
+}
+
+
+.ShowNotification{
+
+  animation: fadeInUp 0.5s;
+
+}
+
+.HideNotification{
+
+  animation: fadeOutDown 0.5s;
 
 }

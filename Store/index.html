@@ -14,6 +14,8 @@
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" href="../Vendor/animate.min.css">
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 	
 	<script>
 
@@ -29,6 +31,21 @@
 <body>
 	
 	<div class="limiter">
+
+		<div class="LoginNotificationsRender">
+
+			<div class="NotificationBody">
+
+				<div class="Content">
+
+					No se encontró ningun usuario
+
+				</div>
+
+			</div>
+
+		</div>
+
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form FormControl PageOne" method="post" action="Sale/index.html">
@@ -72,22 +89,37 @@
 					</div>
 				</form>
 
-				<div class="AccountSummaryToLog">
+				<div class="AccountSummaryToLog" >
 
 					<div class="Information">
 
-						<div class="AccountInformation">
+						<div class="AccountInformation" >
 
 							<div class="ProfilePhoto"></div>
 							<div class="AccountName">Nombre de la cuenta</div>
 							<div class="UserName">nombre_usuario</div>
 
 						</div>
-						<div class="StoreInformation">
+
+						<div class="StoreInformation" >
 							
 							<div class="StoreLogo"></div>
 							<div class="StoreName">Nombre de la tienda</div>
 							<div class="StoreID">Identificador de la tienda</div>
+
+						</div>
+
+						<div class="InitServiceScreen">
+
+							<audio src="../Assets/com.resources/com.sounds/bootloader.mp3" class="BootAudio" style="display: none; opacity: 0; visibility:hidden; background-color: transparent; width:0px; height:0px;"></audio>
+
+							<div class="EonixLogo"></div>
+							<p>Iniciando Servicio</p>
+							<div class="Preloader">
+
+								<div class="PreloaderContent"></div>
+
+							</div>
 
 						</div>
 
