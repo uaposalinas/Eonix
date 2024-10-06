@@ -15,6 +15,9 @@ const AccountInformation = document.querySelector('.AccountInformation');
 const StoreInformation = document.querySelector('.StoreInformation');
 const InitServiceScreen = document.querySelector('.InitServiceScreen');
 
+const NotificationBody = document.querySelector('.NotificationBody');
+const NotificationKey = document.querySelector('.NotificationBody .Content');
+
 FormControl.addEventListener('submit', GetDataToAuth);
 
 function GetDataToAuth(Auth){
@@ -52,14 +55,24 @@ function GetDataToAuth(Auth){
     
             const ErrorCode = Data.ErrorCode;
     
-            alert(ErrorCode)
+           if(ErrorCode == "4041"){
+
+                ShowNotification("No se encontró una cuenta asociada a este usuario")
+
+           }else if(ErrorCode == "4031"){
+
+            ShowNotification("La contraseña especificada no es correcta, inténtalo de nuevo.");
+
+           }
     
            }
     
         })
         .catch(error => {
     
-            console.warn("Ocurrió un error al procesar la solicitud ErrDescripter: "+error)
+            console.warn("Ocurrió un error al procesar la solicitud ErrDescripter: "+error);
+            ShowNotification("Ocurrió un error al procesar la solicitud ErrDescripter: "+error)
+
     
         })
 
@@ -145,5 +158,26 @@ function BootService(){
         }, 300);
 
     },3000)
+
+}
+
+
+function ShowNotification(Message){
+
+    NotificationKey.innerHTML = Message;
+    NotificationBody.style.display = "flex";
+
+    setTimeout(() => {
+        
+        NotificationBody.classList.add('HideNotification');
+
+        setTimeout(() => {
+            
+            NotificationBody.style.display = "none";
+            NotificationBody.classList.remove('HideNotification');
+
+        }, 300);
+
+    }, 5000);
 
 }

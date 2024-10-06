@@ -704,7 +704,7 @@ iframe {
 
 .LoginNotificationsRender{
 
-  width:600px;
+  width:1000px;
   height:80px;
   position: absolute;
   bottom:0px;
@@ -729,7 +729,7 @@ iframe {
   position:absolute;
   left:20px;
   animation: fadeInUp 0.5s;
-  display:flex;
+  display:none;
   justify-content:center;
   align-items:center;
   text-align:center;
@@ -785,6 +785,6 @@ iframe {
 
 .HideNotification{
 
-  animation: fadeOutDown 0.5s;
+  animation: fadeOutDown 0.5s !important;
 
 }
