@@ -46,6 +46,8 @@ function GetDataToAuth(Auth){
         })
         .then(response => response.json())
         .then(Data => {
+
+        sessionStorage.setItem('PublicSessionKey', JSON.stringify(Data))
     
            if(Data.access == "true"){
     
@@ -95,6 +97,7 @@ function WriteLoginData(AccountObject){
     StoreLogo.style.backgroundImage = `url(${AccountObject.StoreInfo.StoreLogo})`;
     StoreName.innerHTML = AccountObject.StoreInfo.StoreName;
     StoreID.innerHTML = RestructureStoreID(AccountObject.UserInfo.StoreID);
+    document.head.title = `${StoreName} • Eonix`
 
 }
 
@@ -123,7 +126,7 @@ function GetCurrentPosition(){
         AccountInformation.classList.add('HidePage');
         StoreInformation.classList.add('ShowPageD');
         ContainerButton.classList.add("BounceIt");
-        ContainerButton.innerHTML = "Iniciar Sesión"
+        ContainerButton.innerHTML = "Iniciar Sesión";
         FormPosition++
 
     }else if(FormPosition == 1){
