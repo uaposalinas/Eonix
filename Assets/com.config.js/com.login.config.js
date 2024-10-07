@@ -97,7 +97,6 @@ function WriteLoginData(AccountObject){
     StoreLogo.style.backgroundImage = `url(${AccountObject.StoreInfo.StoreLogo})`;
     StoreName.innerHTML = AccountObject.StoreInfo.StoreName;
     StoreID.innerHTML = RestructureStoreID(AccountObject.UserInfo.StoreID);
-    document.head.title = `${StoreName} • Eonix`
 
 }
 
@@ -151,6 +150,11 @@ function BootService(){
     setTimeout(() => {
 
         document.querySelector('.BootAudio').play();
+
+        const GetLoginInformation = JSON.parse(sessionStorage.getItem("PublicSessionKey"));
+
+        document.querySelector('.ApplicationTitle').innerHTML = `${GetLoginInformation.StoreInfo.StoreName} • Eonix`
+
         document.querySelector('.limiter').classList.add('HideLogin');
 
         setTimeout(() => {
